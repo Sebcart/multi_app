@@ -43,7 +43,7 @@ export default defineComponent({
     const timerInterval = ref<number | null>(null)
     const targets = ref<Array<{ id: number; x: number; y: number; isExploding?: boolean; shape: string }>>([])
     const shapes = ['circle', 'square', 'triangle', 'star', 'diamond']
-    const shootSound = new Audio('/sounds/hit.mp3')
+    const shootSound = new Audio('/sounds/shoot.mp3')
     const hitTargetSound = new Audio('/sounds/hitTarget.wav')
     const mainMusic = new Audio('/sounds/mainTheme.mp3')
     const stopGameSound = new Audio('/sounds/stopGame.wav')

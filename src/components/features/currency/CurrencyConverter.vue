@@ -114,9 +114,6 @@ export default defineComponent({
           throw new Error('Nie znaleziono kursu dla wybranej waluty')
         }
 
-        // Deadline simulation for better UX demonstration
-        await new Promise(resolve => setTimeout(resolve, 500))
-
         rate.value = data.rates[toCurrency.value]
         result.value = amount.value * rate.value
       } catch (err) {
@@ -147,121 +144,162 @@ export default defineComponent({
 .currency-converter {
   max-width: 800px;
   margin: 0 auto;
-
   .converter-form {
     background: #f8f9fa;
-    padding: 30px;
-    border-radius: 10px;
+    padding: 20px;
+    border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-
     .input-group {
-      margin-bottom: 20px;
-
+      margin-bottom: 16px;
       label {
         display: block;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
         font-weight: 600;
         color: #495057;
+        font-size: 14px;
       }
-
       input[type="number"],
       select {
         width: 100%;
-        padding: 12px;
+        padding: 10px 12px;
         border: 2px solid #dee2e6;
         border-radius: 6px;
-        font-size: 16px;
+        font-size: 15px;
         transition: border-color 0.3s;
         box-sizing: border-box;
-
         &:focus {
           outline: none;
           border-color: #667eea;
         }
       }
     }
-
     .currency-selects {
       display: flex;
-      gap: 15px;
-      align-items: flex-end;
-      margin-bottom: 20px;
-
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 16px;
       .input-group {
         flex: 1;
         margin-bottom: 0;
       }
-
       .swap-btn {
-        padding: 12px 16px;
+        padding: 10px;
         background: #6c757d;
         color: white;
         border: none;
         border-radius: 6px;
         cursor: pointer;
-        font-size: 20px;
+        font-size: 18px;
         transition: background 0.3s;
-        margin-bottom: 2px;
-
+        align-self: stretch;
         &:hover {
           background: #5a6268;
         }
       }
     }
-
     .convert-btn {
       width: 100%;
-      padding: 14px;
+      padding: 12px;
       background: #667eea;
       color: white;
       border: none;
       border-radius: 6px;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 600;
       cursor: pointer;
       transition: background 0.3s;
-
       &:hover:not(:disabled) {
         background: #556cd6;
       }
-
       &:disabled {
         background: #95a5a6;
         cursor: not-allowed;
       }
     }
-
     .error {
-      margin-top: 20px;
-      padding: 12px;
+      margin-top: 16px;
+      padding: 10px 12px;
       background: #f8d7da;
       color: #721c24;
       border: 1px solid #f5c6cb;
       border-radius: 6px;
+      font-size: 14px;
     }
-
     .result {
-      margin-top: 30px;
-      padding: 20px;
+      margin-top: 20px;
+      padding: 16px;
       background: white;
       border-radius: 6px;
       border-left: 4px solid #667eea;
-
       h3 {
         margin-top: 0;
         color: #2c3e50;
+        font-size: 18px;
       }
-
       .result-amount {
-        font-size: 24px;
+        font-size: 20px;
         font-weight: bold;
         color: #667eea;
-        margin: 15px 0;
+        margin: 12px 0;
       }
-
       .exchange-rate {
         color: #6c757d;
-        margin: 10px 0;
+        margin: 8px 0;
+        font-size: 14px;
+      }
+    }
+
+    // Tablet and PC
+    @media (min-width: 768px) {
+      padding: 30px;
+      border-radius: 10px;
+      .input-group {
+        margin-bottom: 20px;
+        label {
+          margin-bottom: 8px;
+          font-size: 16px;
+        }
+        input[type="number"],
+        select {
+          padding: 12px;
+          font-size: 16px;
+        }
+      }
+      .currency-selects {
+        flex-direction: row;
+        gap: 15px;
+        align-items: flex-end;
+        margin-bottom: 20px;
+        .swap-btn {
+          padding: 12px 16px;
+          font-size: 20px;
+          margin-bottom: 2px;
+          align-self: auto;
+        }
+      }
+      .convert-btn {
+        padding: 14px;
+        font-size: 18px;
+      }
+      .error {
+        margin-top: 20px;
+        padding: 12px;
+        font-size: 16px;
+      }
+      .result {
+        margin-top: 30px;
+        padding: 20px;
+        h3 {
+          font-size: 20px;
+        }
+        .result-amount {
+          font-size: 24px;
+          margin: 15px 0;
+        }
+        .exchange-rate {
+          margin: 10px 0;
+          font-size: 16px;
+        }
       }
     }
   }

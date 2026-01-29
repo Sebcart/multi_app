@@ -48,45 +48,37 @@ export default defineComponent({
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
-
   &:not(.coming-soon):hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   }
-
   &.coming-soon {
     opacity: 0.7;
   }
-
   .app-icon {
     font-size: 3rem;
     margin-bottom: 20px;
   }
-
   h3 {
     color: #2c3e50;
     font-size: 1.4rem;
     margin-bottom: 15px;
   }
-
   p {
     color: #6c757d;
     line-height: 1.6;
     margin-bottom: 20px;
   }
-
   .app-link {
     display: inline-block;
     color: #667eea;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s;
-
     &:hover {
       color: #556cd6;
     }
   }
-
   .soon-badge {
     display: inline-block;
     background: #e9ecef;

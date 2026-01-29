@@ -108,25 +108,22 @@ export default defineComponent({
 .todo-list {
   .filters {
     display: flex;
-    gap: 10px;
-    margin-bottom: 25px;
+    gap: 8px;
+    margin-bottom: 20px;
     flex-wrap: wrap;
-
     .filter-btn {
-      padding: 10px 20px;
+      padding: 10px 16px;
       background: #f8f9fa;
       border: 2px solid transparent;
       border-radius: 8px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
       color: #6c757d;
       cursor: pointer;
       transition: all 0.3s;
-
       &:hover {
         background: #e9ecef;
       }
-
       &.active {
         background: white;
         border-color: #667eea;
@@ -134,34 +131,60 @@ export default defineComponent({
       }
     }
   }
-
   .empty-state {
     text-align: center;
-    padding: 60px 20px;
+    padding: 40px 15px;
     color: #adb5bd;
-
     .empty-icon {
-      font-size: 4rem;
+      font-size: 3rem;
       display: block;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
-
     p {
-      font-size: 18px;
+      font-size: 16px;
       margin: 0;
     }
   }
-
   .stats {
     display: flex;
-    justify-content: space-between;
-    margin-top: 25px;
-    padding: 15px 20px;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 20px;
+    padding: 12px 16px;
     background: #f8f9fa;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     color: #6c757d;
+  }
+
+  // Tablet and PC
+  @media (min-width: 768px) {
+    .filters {
+      gap: 10px;
+      margin-bottom: 25px;
+      .filter-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
+    .empty-state {
+      padding: 60px 20px;
+      .empty-icon {
+        font-size: 4rem;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 18px;
+      }
+    }
+    .stats {
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 25px;
+      padding: 15px 20px;
+      font-size: 14px;
+    }
   }
 }
 </style>

@@ -23,6 +23,10 @@
           <span class="link-icon">🎮</span>
           Mini Gra
         </router-link>
+        <router-link to="/dashboard" class="nav-link">
+          <span class="link-icon">📊</span>
+          Dashboard
+        </router-link>
       </div>
     </div>
   </nav>

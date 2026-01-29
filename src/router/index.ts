@@ -3,6 +3,7 @@ import HomeView from '@/views/HomeView.vue'
 import CurrencyView from '@/views/CurrencyView.vue'
 import TodoView from '@/views/TodoView.vue'
 import GameView from '@/views/GameView.vue'
+import Dashboard from '@/views/DashboardView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -28,6 +29,12 @@ const routes: Array<RouteRecordRaw> = [
     name: 'game',
     component: GameView,
     meta: { title: 'Gra - Vue Learning' }
+  },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: Dashboard,
+    meta: { title: 'Dashboard - Vue Learning' }
   }
 ]
 

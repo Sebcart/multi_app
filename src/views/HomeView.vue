@@ -47,6 +47,13 @@
           icon="📊"
           title="Dashboard"
           description="Panel z wykresami i statystykami do nauki integracji bibliotek wykresów."
+          link="/dashboard"
+        />
+
+        <AppCard
+          icon="🧠"
+          title="Gra Memory"
+          description="Prosta gra memory do ćwiczenia komponentów i logiki gry w Vue."
           :coming-soon="true"
         />
       </div>
@@ -103,7 +110,6 @@ export default defineComponent({
     }
   }
 }
-
 .content-section {
   max-width: 100%;
   margin: 0 auto;
